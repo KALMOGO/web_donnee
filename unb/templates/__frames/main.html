@@ -86,7 +86,7 @@
 
                 <ul class="nav navbar-nav">
 
-                <li><a href="">Accueil</a></li>
+                <li><a href="{% url 'home' %}">Accueil</a></li>
                 <li><a href="{% url 'presentation' %}">Presentation</a></li>
                 <li><a href="{% url 'etablissement_home' %}">Ecoles/Institues</a></li>
                 <li><a href="{% url 'formation' %}">Formations</a></li>
@@ -264,6 +264,6 @@
 
     </script>
         
-    
+    {% block jsContent %}{% endblock jsContent %}
 </body>
 </html>
