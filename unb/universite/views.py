@@ -1,15 +1,31 @@
 from django.shortcuts import render
-
+import owlready2 as owl
+from .models import Ontology
 # Create your views here.
+
+ontology = Ontology()
 
 def Home_PageView(request):
     
-    context = {"page_title": "Home Page"}
+    data = {"page_title": "Home Page"}
+    president = ontology.getPresident()
+    actualities = ontology.getActualities()
+    partenaire = ontology.getPartenaire()
+    enseignants = ontology.getEnseignant()
+    formations = ontology.getEtablissement()
     
-    return render(request, "index.html", context=context)
+    universite = ontology.getUniversite()
+    data.update({"actualities":actualities})
+    data.update({"universite":universite})
+    data.update({"president":president})
+    data.update({"partenaire":partenaire})
+    data.update({"enseignants":enseignants})
+    data.update({"formations":formations})
+    return render(request, "index.html", context=data)
 
 def Presentation_PageView(request):
-    context={}
+    universite = ontology.getUniversite()
+    context={"universite":universite}
     return render(request, "presentation.html", context=context)
 
 def Recherche_PageView(request):
@@ -67,3 +83,4 @@ def Document_PageView(request):
 def Actualite_Detail_PageView(request):
     context = {}
     return render(request, "actualite_detail.html", context=context)
+

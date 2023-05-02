@@ -25,47 +25,29 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="blog-wrapper">
                             <div class="blog-image">
                                 <a href="single.html" title="">
-                                    <img src="{% static 'upload/xslider_new_01.jpg.pagespeed.ic.RgCY2ieSzC.jpg' %}" alt="" class="img-responsive"></a>
+                                    <img src="{% get_static_prefix %}{{universite.imageCouvertureUniversite}}" alt="" class="img-responsive"></a>
                             </div>
                             <div class="blog-desc">
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                                    standard dummy text ever since the 1500s, when an unknown printer took.Lorem Ipsum is
-                                    simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
-                                    industry's standard dummy text ever since the 1500s, when an unk...
+                                    {{universite.VisionUniversite}}
                                 </p>
 
                                 <p>
                                     <h2 > Historique</h2>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                                    standard dummy text ever since the 1500s, when an unknown printer took.Lorem Ipsum is simply dummy text
-                                    of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
-                                    the 1500s, when an unk...
-                                </p>
-
-                                <p>
-                                    <h2 > Actuel President</h2>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                                    standardrd dummy text ever since the 1500s, when an unknown printer took.Lorem Ipsum is simply dummy 
-                                    text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-                                    ever since the 1500s, when an unk.. dummy text ever since the 1500s, when an unknown printer took.Lorem Ipsum 
-                                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                                    standard dummy text ever since the 1500s, when an unk...
-
+                                     {{universite.descriptionUniversite}}
                                 </p>
 
                                 <p>
                                     <h2> Sites d'Enseignement</h2>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-                                    the industry's standardrd dummy text ever since the 1500s, when an unknown printer took.Lorem Ipsum 
-                                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unk.. dummy text ever since the 1500s,
-                                    when an unknown printer took.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unk...
-                                    <br>  <b> <a href="#"> Visiter la page des site</a>  </b>
+                                    {% for site in universite.site_univ %}
+                                    <p></p>
+                                    <div>
+                                        <a href="#">{{site}}</a>
+                                    </div>
+                                    {% endfor %}
                                 </p>
                             </div>
                         </div>
